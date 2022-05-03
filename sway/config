@@ -234,3 +234,6 @@ default_border pixel
 input 2:7:SynPS/2_Synaptics_TouchPad {		
     tap enabled
 }
+
+
+exec mako
