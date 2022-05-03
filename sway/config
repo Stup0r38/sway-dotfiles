@@ -229,3 +229,8 @@ input type:keyboard {
 exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'  
 exec --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Gruvbox-Material-Dark' 
 default_border pixel
+
+#use swaymsg get_inputs to check for the touchpad identifier to enable tap to click
+input 2:7:SynPS/2_Synaptics_TouchPad {		
+    tap enabled
+}
