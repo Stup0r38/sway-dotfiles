@@ -46,7 +46,7 @@ exec --no-startup-id lxpolkit
 
 #Set wallpaper
 #exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/tools.jpg
-output eDP-1 bg ~/.config/sway/wallpapers/tools.jpg stretch
+output eDP-1 bg ~/.config/sway/wallpapers/lantern.jpg stretch
 
 exec --no-startup-id xset +fp /home/alessandrop/.local/share/fonts
 exec --no-startup-id xset fp rehash
@@ -72,7 +72,7 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec foot
 
 # kill focused window
 bindsym $mod+q kill
@@ -170,7 +170,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r exec sway reload
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 

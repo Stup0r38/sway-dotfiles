@@ -4,8 +4,7 @@
     "height": 30,
 
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["tray", "custom/spotify", "custom/weather", "custom/mail", "custom/storage", "backlight", "pulseaudio", "network", "idle_inhibitor", "battery", "clock"],
+    "modules-right": ["backlight", "pulseaudio", "network", "idle_inhibitor", "battery", "clock", "tray"],
     "sway/mode": {
         "format": " {}"
     },
@@ -125,7 +124,7 @@
 
     "tray": {
         "icon-size": 20,
-        "spacing": 18
+        "spacing": 10
     },
     "wlr/taskbar": {
         "format": "{icon}",
