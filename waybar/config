@@ -4,7 +4,7 @@
     "height": 30,
 
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-right": ["backlight", "pulseaudio", "network", "idle_inhibitor", "battery", "clock", "tray"],
+    "modules-right": ["backlight", "pulseaudio", "network", "idle_inhibitor", "battery", "clock", "tray", "custom/power"],
     "sway/mode": {
         "format": " {}"
     },
@@ -35,6 +35,10 @@
         "format": "<span font='Font Awesome 5 Free 9'>🏳️</span> {}",
         "tooltip-format": "{long}",
         "on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
+    },
+    "custom/power": {
+    	"format": "    ",
+    	"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Sleep' 'systemctl suspend' -b  'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#282828 --button-background=#ebdbb2 --button-border=#282828 --border-bottom=#282828 --text=ebdbb2" 
     },
     "custom/powermenu": {
         "return-type": "json",

@@ -28,7 +28,8 @@ font pango:monospace 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- slock --nofork
+#run chmod 6755 /sbin/unix_chkpwd if swaylock does not unlock properly
+exec --no-startup-id xss-lock --transfer-sleep-lock -- swaylock --nofork
 
 #dual screen
 exec_always --no-startup-id xrandr --output HDMI1 --auto --right-of eDP1
@@ -203,7 +204,7 @@ bindsym $mod+r mode "resize"
 
 #Programs
 bindsym $mod+f exec thunar
-#bindsym $mod+b exec firefox
+#bindsym $mod+b exec firefox-wayland
 bindsym $mod+b exec brave-browser
 
 
@@ -235,5 +236,10 @@ input 2:7:SynPS/2_Synaptics_TouchPad {
     tap enabled
 }
 
-
 exec mako
+
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
