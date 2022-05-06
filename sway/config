@@ -195,6 +195,7 @@ gaps outer 1
 
 #Remove titlebar and add 2 pixel border
 for_window [class=".*"] border pixel 2
+smart_borders on
 
 #Colors (to fix later)
 #class                 border  backgr. text    indicator child_border
@@ -211,6 +212,7 @@ input type:keyboard {
 exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'  
 exec --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Gruvbox-Material-Dark' 
 default_border pixel
+default_floating_border pixel
 
 #use swaymsg -t get_inputs to check for the touchpad identifier to enable tap to click
 input 2:7:SynPS/2_Synaptics_TouchPad {		
@@ -220,8 +222,8 @@ input 2:7:SynPS/2_Synaptics_TouchPad {
 exec mako
 
 #run chmod 6755 /sbin/unix_chkpwd if swaylock does not unlock properly
-exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' \
-              resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+#         timeout 300 'swaylock -f -c 000000' \
+#         timeout 600 'swaymsg "output * dpms off"' \
+#              resume 'swaymsg "output * dpms on"' \
+#         before-sleep 'swaylock -f -c 000000'
