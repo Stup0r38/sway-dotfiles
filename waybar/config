@@ -38,7 +38,7 @@
     },
     "custom/power": {
     	"format": "    ",
-    	"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Sleep' 'systemctl suspend && swaylock --daemonize -c 000000' -b  'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#282828 --button-background=#ebdbb2 --button-border=#282828 --border-bottom=#282828 --text=ebdbb2" 
+    	"on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Sleep' 'systemctl suspend && swaylock --daemonize -c 000000 && killall swaynag' -b  'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#282828 --button-background=#ebdbb2 --button-border=#282828 --border-bottom=#282828 --text=ebdbb2" 
     },
     "custom/recorder": {
 		"format": "",
